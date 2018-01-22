@@ -1,0 +1,4 @@
+[vb]
+ip ansible_ssh_host=10.1.1.238 ansible_ssh_port=22
+[vb:vars]
+ansible_port=22

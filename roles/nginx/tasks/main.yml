@@ -1,0 +1,7 @@
+ - name: Set nginx vhosts
+   template:
+    src: "{{ NGINX_CONFIG_NAME }}"
+    dest: "{{ NGINX_PATH_CONFIG }}{{ NGINX_SERVER_NAME }}"
+    newline_sequence: '\r\n'
+   notify:
+   - reload nginx

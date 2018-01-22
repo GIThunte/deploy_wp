@@ -1,0 +1,7 @@
+MYSQL_CONTAINTER_NAME:  mysql_container
+WP_IMG_NAME:            wordpress
+MYSQL_ROOT_PASSWORD:    password
+WP_CONTAINTER_NAME:     wp_container
+WORDPRESS_DB_HOST:      "{{ MYSQL_CONTAINTER_NAME }}"
+WP_HOST_PORT:           7272
+WP_CONTAINER_PORT:      80

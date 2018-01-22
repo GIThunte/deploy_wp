@@ -1,0 +1,4 @@
+NGINX_PATH_CONFIG:  /etc/nginx/sites-enabled/
+NGINX_CONFIG_NAME:  wordpress.com 
+LISTEN_NGINX_PORT:  80
+NGINX_SERVER_NAME:  wordpress.com

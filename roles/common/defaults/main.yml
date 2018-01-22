@@ -1,0 +1,10 @@
+COMMON_PKG: 
+         - docker
+         - docker.io
+         - nginx
+         - git
+         - python3.5
+         - python-pip
+
+COMMON_PKG_PIP:
+         - docker-py

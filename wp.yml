@@ -1,0 +1,25 @@
+- hosts: all
+  become: true
+  pre_tasks:
+    - name: Install python for Ansible
+      raw: test -e /usr/bin/python || apt -y update && apt install -y python
+      changed_when: false
+    - setup: null
+  vars:
+    MYSQL_IMG_NAME:         mysql
+    MYSQL_ROOT_PASSWORD:    password
+    MYSQL_CONTAINTER_NAME:  mysql_container
+    WP_IMG_NAME:            wordpress
+    WP_CONTAINTER_NAME:     wp_container
+    WORDPRESS_DB_HOST:      "{{ MYSQL_CONTAINTER_NAME }}"
+    WP_HOST_PORT:           7272
+    WP_CONTAINER_PORT:      80
+    NGINX_PATH_CONFIG:      /etc/nginx/sites-enabled/
+    NGINX_CONFIG_NAME:       wordpress.com 
+    LISTEN_NGINX_PORT:      80
+    NGINX_SERVER_NAME:      wp.com
+  roles:
+    - role: common
+    - role: mysql
+    - role: wordpress
+    - role: nginx

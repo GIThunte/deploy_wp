@@ -1,0 +1,5 @@
+ - name: install base pkg
+   apt: pkg="{{ item }}" state=present 
+   with_items: "{{ COMMON_PKG }}"
+ - name: install modules
+   pip: name="{{ COMMON_PKG_PIP }}" state=present

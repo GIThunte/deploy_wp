@@ -1,0 +1,8 @@
+ - name: Pull and up MySQL container
+   docker:
+    name:           "{{ MYSQL_CONTAINTER_NAME }}"
+    image:          "{{ MYSQL_IMG_NAME }}"
+    state:          running
+    pull:           always
+    env:
+        MYSQL_ROOT_PASSWORD:  "{{ MYSQL_ROOT_PASSWORD  }}" 
