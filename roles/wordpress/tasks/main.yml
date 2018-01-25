@@ -1,9 +1,9 @@
  - name: Pull and up wordpress container
    docker:
-    name:           "{{ WP_CONTAINTER_NAME }}"
-    image:          "{{ WP_IMG_NAME }}"
-    state:          running
-    pull:           always
+    name:  "{{ WP_CONTAINTER_NAME }}"
+    image: "{{ WP_IMG_NAME }}"
+    state: running
+    pull:  always
     links:
     - "{{ WORDPRESS_DB_HOST }}"
     ports:
